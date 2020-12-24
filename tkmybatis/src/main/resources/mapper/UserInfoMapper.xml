@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.demo.tkmybatis.mapper.UserInfoMapper">
+    <resultMap id="BaseResultMap" type="com.demo.tkmybatis.entity.UserInfo">
+        <!--
+          WARNING - @mbggenerated
+        -->
+        <id column="uid" jdbcType="INTEGER" property="uid" />
+        <result column="account" jdbcType="VARCHAR" property="account" />
+        <result column="password" jdbcType="VARCHAR" property="password" />
+
+    </resultMap>
+    <select id="getByAccount" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select * from user_info where account=#{account}
+    </select>
+
+    <select id="getUserByName" resultType="com.demo.tkmybatis.entity.dto.UserDto">
+        select ui.uid,ui.account,ui.password,r.roleName
+        from user_info ui
+        left join user_role ur on ur.userId=ui.uid
+        left join  `role` r on r.id=ur.roleId
+        where ui.account=#{account}
+    </select>
+</mapper>

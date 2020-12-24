@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.0"></script>
+</head>
+<body>
+    <div id="btnDiv">
+        <input id="account" type="text" name="account" v-model="account">
+        <input type="button" @click="getUserByName" value="确定">
+        <div> {{res}} </div>
+    </div>
+
+
+    <script>
+        new Vue({
+            el:"#btnDiv",
+            data:{
+                account:'',
+                res:''
+            },
+            methods:{
+                getUserByName(){
+                    this.$http.post('http://localhost:8080/tkmybatis/getUserByAccount',{
+                        account:this.account
+                    }).then(function (response) {
+                        this.res = response.data;
+                    })
+                    .catch(function (error) {
+                        console.log(error);
+                    });
+                }
+            }
+        })
+
+    </script>
+</body>
+</html>
