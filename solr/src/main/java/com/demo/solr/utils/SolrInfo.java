@@ -83,6 +83,10 @@ public class SolrInfo {
         return hightlight;
     }
 
+    public void setHightlight(boolean hightlight) {
+        this.isHightlight = hightlight;
+    }
+
     public void setHightlight(Hightlight hightlight) {
         this.hightlight = hightlight;
     }

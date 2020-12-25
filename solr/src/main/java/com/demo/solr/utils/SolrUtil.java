@@ -199,12 +199,12 @@ public class SolrUtil {
 
     public static void main(String[] args) throws Exception {
         SolrUtil solr = new SolrUtil();
-//        SolrInfo solrInfo = new SolrInfo();
-//        solrInfo.setQ("今天天气真好啊");
-//        solrInfo.setDf("name");
-//        solrInfo.setHightlight(true);
-//        Map<String, Object> map = solr.queryDoc(solrInfo);
-//        System.out.println(map.toString());
+        SolrInfo solrInfo = new SolrInfo();
+        solrInfo.setQ("今天天气真好啊");
+        solrInfo.setDf("name");
+        solrInfo.setHightlight(true);
+        Map<String, Object> map = solr.queryDoc(solrInfo);
+        System.out.println(map.toString());
 
 //        Person person = new Person();
 //        person.setId("9");
@@ -212,8 +212,8 @@ public class SolrUtil {
 //        person.setDescription("bbb");
 //        solr.addDoc(person);
 
-        List ids = new ArrayList();
-        ids.add("10");
-        solr.deleteDocByIds(ids);
+//        List ids = new ArrayList();
+//        ids.add("10");
+//        solr.deleteDocByIds(ids);
     }
 }
