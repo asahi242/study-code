@@ -13,7 +13,6 @@ public class Test {
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
 	public String getTest(String json){
-		
 		return json;
 	}
 	
