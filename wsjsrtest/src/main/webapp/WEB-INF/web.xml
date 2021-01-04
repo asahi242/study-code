@@ -11,19 +11,27 @@
   <context-param>
     <param-name>resteasy.resources</param-name>
     <param-value>
-      com.demo.Test,
-      com.demo.TestController
+      com.demo.services.Test,
+      com.demo.services.TestController
     </param-value>
   </context-param>
+  <context-param>
+    <param-name>resteasy.servlet.mapping.prefix</param-name>
+    <param-value>/services</param-value>
+  </context-param>
 
+  <listener>
+    <listener-class>
+      org.jboss.resteasy.plugins.server.servlet.ResteasyBootstrap
+    </listener-class>
+  </listener>
   <servlet>
-
     <servlet-name>Resteasy</servlet-name>
     <servlet-class>org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>Resteasy</servlet-name>
-    <url-pattern>/</url-pattern>
+    <url-pattern>/services/*</url-pattern>
   </servlet-mapping>
 
 </web-app>

@@ -1,4 +1,4 @@
-package com.demo;
+package com.demo.services;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.*;

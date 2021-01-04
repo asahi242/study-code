@@ -1,10 +1,8 @@
-package com.demo;
+package com.demo.services;
 
 import javax.ws.rs.FormParam;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class User {
 	@FormParam("id")
